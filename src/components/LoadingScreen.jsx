@@ -29,13 +29,13 @@ export default function LoadingScreen({ onFinished }) {
       <div className={styles.container}>
         <div className={styles.logoWrapper}>
           {/* Background outline logo */}
-          <div className={styles.logoOutline}>a &amp; S</div>
+          <div className={styles.logoOutline}>A &amp; S</div>
           {/* Filling logo */}
           <div 
             className={styles.logoFill} 
             style={{ height: `${progress}%` }}
           >
-            <div className={styles.logoFillInner}>a &amp; S</div>
+            <div className={styles.logoFillInner}>A &amp; S</div>
           </div>
         </div>
         <p className={styles.loadingText}>Invitation is loading...</p>
