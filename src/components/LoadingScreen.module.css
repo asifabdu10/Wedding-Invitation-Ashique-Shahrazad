@@ -22,14 +22,14 @@
 .logoWrapper {
   position: relative;
   font-family: var(--font-script);
-  font-size: 6rem;
+  font-size: 8rem;
   line-height: 1;
   margin-bottom: 20px;
   user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 6rem; /* Fixed height for the logo area */
+  height: 8rem; /* Adjusted for taller script */
 }
 
 .logoOutline {
@@ -54,7 +54,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 6rem; /* Must match .logoWrapper height */
+  height: 8rem; /* Must match .logoWrapper height */
   display: flex;
   align-items: center;
   justify-content: center;
