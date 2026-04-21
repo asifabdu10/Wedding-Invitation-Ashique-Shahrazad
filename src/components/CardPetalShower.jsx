@@ -87,7 +87,10 @@ export default function CardPetalShower() {
 
   useEffect(() => {
     const canvas = canvasRef.current
-    const handleMouseMove = (e) => {
+    const parent = canvas.parentElement
+    if (!parent) return
+
+    const handleMove = (e) => {
       const now = Date.now()
       if (now - lastSpawnRef.current < SPAWN_COOLDOWN) return
 
@@ -101,9 +104,15 @@ export default function CardPetalShower() {
       lastSpawnRef.current = now
     }
 
-    const parent = canvas.parentElement
-    parent.addEventListener('mousemove', handleMouseMove)
-    return () => parent.removeEventListener('mousemove', handleMouseMove)
+    // Allow normal scrolling but capture the movement for petals
+    parent.style.touchAction = 'pan-y'
+    parent.addEventListener('pointermove', handleMove)
+    parent.addEventListener('pointerdown', handleMove)
+    
+    return () => {
+      parent.removeEventListener('pointermove', handleMove)
+      parent.removeEventListener('pointerdown', handleMove)
+    }
   }, [])
 
   return <canvas ref={canvasRef} className={styles.canvas} />
