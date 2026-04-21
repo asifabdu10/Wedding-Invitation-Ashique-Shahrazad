@@ -1,10 +1,11 @@
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
   <text 
-    y='55%' 
     x='50%' 
-    font-family="'Luxurious Script', 'Great Vibes', cursive" 
+    y='55%' 
+    font-family="'Luxurious Script', cursive" 
+    font-weight='bold' 
     font-size='38' 
-    fill='#B5263E' 
+    fill='#ff0000' 
     text-anchor='middle' 
     dominant-baseline='middle'
   >A &amp; S</text>
