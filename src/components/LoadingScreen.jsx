@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import PetalCanvas from './PetalCanvas'
 import CardPetalShower from './CardPetalShower'
 import styles from './LoadingScreen.module.css'
 
@@ -23,6 +24,7 @@ export default function LoadingScreen({ onFinished }) {
 
   return (
     <div className={styles.overlay}>
+      <PetalCanvas />
       <CardPetalShower />
       <div className={styles.container}>
         <div className={styles.logoWrapper}>
