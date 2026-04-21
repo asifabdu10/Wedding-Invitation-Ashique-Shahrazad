@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CardPetalShower from './CardPetalShower'
 import styles from './LoadingScreen.module.css'
 
 export default function LoadingScreen({ onFinished }) {
@@ -22,6 +23,7 @@ export default function LoadingScreen({ onFinished }) {
 
   return (
     <div className={styles.overlay}>
+      <CardPetalShower />
       <div className={styles.container}>
         <div className={styles.logoWrapper}>
           {/* Background outline logo */}
