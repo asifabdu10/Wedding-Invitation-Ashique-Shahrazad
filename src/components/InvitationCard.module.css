@@ -3,13 +3,15 @@
   position: relative;
   z-index: 10;
   background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
   width: 100%;
   max-width: 520px;
   padding: 50px 44px 40px;
-  box-shadow: 0 4px 40px rgba(160, 100, 100, 0.10);
+  box-shadow: 0 10px 40px rgba(160, 100, 100, 0.12);
   text-align: center;
-  border: 1px solid rgba(220, 200, 200, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: background 0.4s, box-shadow 0.4s;
 }
 

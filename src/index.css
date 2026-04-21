@@ -11,7 +11,7 @@
   --crimson: #B5263E;
   --crimson-dark: #8e1c2e;
   --cream: #F7F0EA;
-  --card-bg: #FFFFFF;
+  --card-bg: rgba(255, 255, 255, 0.85);
   --text-dark: #2c2020;
   --text-muted: #9a8080;
   --border: #e8d8d8;
@@ -29,7 +29,7 @@
 /* dark theme variables */
 body.dark {
   --cream: #1a1010;
-  --card-bg: #261818;
+  --card-bg: rgba(38, 24, 24, 0.85);
   --text-dark: #f0e0e0;
   --text-muted: #c0a0a0;
   --border: #3a2828;
