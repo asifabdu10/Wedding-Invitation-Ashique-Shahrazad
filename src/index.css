@@ -47,10 +47,14 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--cream);
+  background: linear-gradient(135deg, var(--cream) 0%, #ede0d4 100%);
   min-height: 100vh;
   overflow-x: hidden;
-  transition: background-color 0.4s;
+  transition: background 0.4s;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #1a1010 0%, #261818 100%);
 }
 
 #root {
