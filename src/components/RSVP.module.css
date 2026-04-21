@@ -1,0 +1,277 @@
+.section { text-align: center; }
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.row { display: flex; gap: 12px; }
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid;
+}
+
+.yes { background: var(--crimson); color: #fff; border-color: var(--crimson); }
+.yes:hover { background: var(--crimson-dark); transform: translateY(-2px); }
+
+.no { background: var(--card-bg); color: var(--text-dark); border-color: var(--border); }
+.no:hover { background: var(--cream); transform: translateY(-2px); }
+
+/* ── Full Screen Steps ── */
+
+.fullScreen {
+  padding: 10px 5px;
+  animation: slideIn 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.backBtn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  transition: color 0.3s;
+}
+.backBtn:hover { color: var(--crimson); }
+
+.headingTitle {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.headingSub {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+/* ── Guest Box ── */
+.guestBox {
+  background: var(--rsvp-yes-bg); /* Use the thematic champagne gold tint */
+  border: 1px solid var(--rsvp-yes-border);
+  border-radius: 20px;
+  width: 100%;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.guestQuote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.pickerBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.pickerBtn:hover { border-color: var(--crimson); color: var(--crimson); }
+
+.guestValue {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  min-width: 30px;
+}
+
+.pickerLabel {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 50px;
+  background: var(--crimson);
+  color: #fff;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.submitBtn:hover { background: var(--crimson-dark); }
+
+/* ── Declined Styles ── */
+.avatarCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.initialsSmall {
+  font-family: var(--font-script);
+  font-size: 1.8rem; /* Slightly reduced size to ensure it fits comfortably in the 80px circle */
+  color: var(--crimson);
+  line-height: 1;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarEmoji { font-size: 2.2rem; }
+
+.quoteBox {
+  padding: 24px;
+  background: var(--rsvp-no-bg);
+  border-left: 3px solid var(--crimson);
+  border-radius: 4px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+.quoteBox p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.detailsList {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.detailItem {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--card-bg);
+}
+.detailItem:not(:last-child) { border-bottom: 1px solid var(--border); }
+.detailItem svg { color: var(--text-muted); opacity: 0.6; }
+
+.outlineBtn {
+  background: var(--rsvp-no-bg);
+  border: 1.5px solid var(--crimson);
+  color: var(--crimson);
+}
+.outlineBtn:hover { background: #fff0ef; }
+
+.undo {
+  margin-top: 15px;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0.7;
+}
+.undo:hover { opacity: 1; color: var(--crimson); }
+
+.feedback {
+  padding: 24px;
+  border-radius: 12px;
+  animation: fadeIn 0.4s ease;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.feedback p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.success {
+  background: var(--rsvp-yes-bg);
+  border-color: var(--rsvp-yes-border);
+}
+
+.error {
+  background: var(--rsvp-no-bg);
+  border-color: var(--rsvp-no-border);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

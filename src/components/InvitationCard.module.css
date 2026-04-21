@@ -1,0 +1,316 @@
+/* ── Card Shell ── */
+.card {
+  position: relative;
+  z-index: 10;
+  background: var(--card-bg);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 50px 44px 40px;
+  box-shadow: 0 4px 40px rgba(160, 100, 100, 0.10);
+  text-align: center;
+  border: 1px solid rgba(220, 200, 200, 0.25);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* ── Initials ── */
+.initials {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  color: var(--crimson);
+  line-height: 1.1;
+  margin-bottom: 26px;
+}
+
+/* ── Bismillah ── */
+.bismillah {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  opacity: 0.75;
+  letter-spacing: 0.3px;
+  margin-bottom: 16px;
+}
+
+/* ── Labels ── */
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.honorText {
+  margin: 24px 0 22px;
+}
+
+.countdownLabel {
+  margin-bottom: 12px;
+}
+
+/* ── Ornamental divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 22px;
+  color: #d4a0a8;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, #d4a0a8, transparent);
+}
+
+/* ── Names ── */
+.name {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.heartWrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  margin: 12px auto;
+  cursor: pointer;
+  z-index: 5;
+  /* Lower than names */
+}
+
+.heart {
+  display: block;
+  color: var(--crimson);
+  font-size: 1.2rem;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.popHeart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.2rem;
+  pointer-events: none;
+  animation: heartPop 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes heartPop {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(calc(-50% + var(--x)), -150%) rotate(var(--r)) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.30);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.18);
+  }
+}
+
+/* ── Date Row ── */
+.dateRow {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  transition: border-color 0.4s;
+}
+
+.dateCell {
+  flex: 1;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.narrowCell {
+  flex: 0.6;
+}
+
+.dateCell+.dateCell {
+  border-left: 1px solid var(--border);
+}
+
+.cellTop {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.cellValue {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin: 2px 0;
+}
+
+.cellSmall {
+  font-size: 1.1rem;
+}
+
+.cellBig {
+  font-size: 2.5rem;
+  padding: 4px 0;
+  font-weight: 300;
+}
+
+.cellHighlight {
+  color: var(--crimson);
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+/* ── Venue ── */
+.venueName {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.venueLocation {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 22px;
+}
+
+/* ── Icon ── */
+.icon {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Action Buttons ── */
+.btnRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.btn:hover {
+  background: var(--cream);
+  border-color: #c9a0a8;
+  color: var(--crimson);
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 36px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer a {
+  color: var(--crimson);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .card {
+    padding: 40px 24px 30px;
+  }
+
+  .name {
+    font-size: 1.75rem;
+  }
+
+  .initials {
+    font-size: 2.5rem;
+  }
+
+  .btnRow {
+    flex-direction: column;
+  }
+
+  .cellBig {
+    font-size: 2rem;
+  }
+}

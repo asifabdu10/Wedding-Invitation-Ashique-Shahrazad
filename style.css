@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap');
+
+/* ─── Reset & Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #F7F0EA;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ─── Falling Petals ─── */
+#petal-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Dark Mode Toggle ─── */
+.dark-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.dark-toggle:hover {
+  background: #fff;
+}
+
+/* ─── Main Card ─── */
+.invitation-card {
+  position: relative;
+  z-index: 10;
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 50px 44px 40px;
+  box-shadow: 0 4px 40px rgba(160, 100, 100, 0.10);
+  text-align: center;
+  border: 1px solid rgba(220, 200, 200, 0.25);
+}
+
+/* ─── Initials Header ─── */
+.initials {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #B5263E;
+  line-height: 1.1;
+  margin-bottom: 26px;
+}
+
+/* ─── Bismillah ─── */
+.bismillah {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #5a4a4a;
+  letter-spacing: 0.3px;
+  margin-bottom: 16px;
+}
+
+/* ─── Section Label ─── */
+.label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9a8080;
+  margin-bottom: 20px;
+}
+
+/* ─── Decorative Line ─── */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 22px;
+  color: #d4a0a8;
+  font-size: 0.45rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, #d4a0a8, transparent);
+}
+
+/* ─── Names ─── */
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-weight: 300;
+  color: #2c2020;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.heart {
+  display: block;
+  color: #B5263E;
+  font-size: 1rem;
+  margin: 12px 0;
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.25);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.15);
+  }
+}
+
+.honor-text {
+  margin: 24px 0 22px;
+}
+
+/* ─── Date / Time Row ─── */
+.date-row {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #e8d8d8;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.date-cell {
+  flex: 1;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-cell+.date-cell {
+  border-left: 1px solid #e8d8d8;
+}
+
+.date-cell .cell-top {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9a8080;
+}
+
+.date-cell .cell-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #B5263E;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+
+.date-cell .cell-sub {
+  font-size: 0.65rem;
+  color: #9a8080;
+  letter-spacing: 1px;
+}
+
+/* ─── Venue ─── */
+.venue-name {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2c2020;
+  margin-bottom: 6px;
+}
+
+.venue-location {
+  font-size: 0.8rem;
+  color: #9a8080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 22px;
+}
+
+.venue-location svg {
+  width: 12px;
+  height: 12px;
+  fill: #9a8080;
+  flex-shrink: 0;
+}
+
+/* ─── Countdown ─── */
+.countdown-label {
+  margin-bottom: 12px;
+}
+
+.countdown-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.cd-box {
+  border: 1px solid #e8d8d8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  min-width: 64px;
+  background: #fff;
+}
+
+.cd-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c2020;
+  display: block;
+  line-height: 1;
+}
+
+.cd-unit {
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #b09090;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ─── Action Buttons ─── */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 8px;
+  border-radius: 8px;
+  border: 1px solid #e8d8d8;
+  background: #fff;
+  color: #5a4a4a;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.btn:hover {
+  background: #F7F0EA;
+  border-color: #c9a0a8;
+  color: #B5263E;
+}
+
+.btn svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+/* ─── RSVP ─── */
+.rsvp-label {
+  margin-bottom: 14px;
+}
+
+.rsvp-row {
+  display: flex;
+  gap: 12px;
+}
+
+.rsvp-btn {
+  flex: 1;
+  padding: 13px;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: 1px solid;
+}
+
+.rsvp-btn.yes {
+  background: #B5263E;
+  color: #fff;
+  border-color: #B5263E;
+}
+
+.rsvp-btn.yes:hover {
+  background: #8e1c2e;
+}
+
+.rsvp-btn.no {
+  background: #fff;
+  color: #5a4a4a;
+  border-color: #e8d8d8;
+}
+
+.rsvp-btn.no:hover {
+  background: #f7f0ea;
+}
+
+/* ─── Footer ─── */
+.card-footer {
+  margin-top: 36px;
+  font-size: 0.65rem;
+  color: #c0a8a8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-footer a {
+  color: #B5263E;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ─── Dark mode ─── */
+body.dark {
+  background-color: #1a1010;
+}
+
+body.dark .invitation-card {
+  background: #261818;
+  border-color: rgba(255, 200, 200, 0.1);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .name {
+  color: #f0e0e0;
+}
+
+body.dark .bismillah {
+  color: #d0b0b0;
+}
+
+body.dark .venue-name {
+  color: #f0e0e0;
+}
+
+body.dark .cd-value {
+  color: #f0e0e0;
+}
+
+body.dark .date-cell .cell-value {
+  color: #e05070;
+}
+
+body.dark .btn,
+body.dark .rsvp-btn.no,
+body.dark .date-row,
+body.dark .cd-box {
+  background: #1e1212;
+  border-color: #3a2828;
+  color: #d0b0b0;
+}
+
+body.dark .dark-toggle {
+  background: #2a1818;
+  color: #f0e0e0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 500px) {
+  .invitation-card {
+    padding: 40px 24px 30px;
+  }
+
+  .name {
+    font-size: 1.75rem;
+  }
+
+  .initials {
+    font-size: 2.5rem;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .date-cell .cell-value {
+    font-size: 1.5rem;
+  }
+}
