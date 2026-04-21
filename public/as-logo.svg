@@ -1,22 +1,12 @@
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
   <text 
-    x='45' 
-    y='80' 
-    font-family="'Georgia', 'Times New Roman', serif" 
+    x='50%' 
+    y='55%' 
+    font-family="'Times New Roman', serif" 
     font-weight='bold' 
-    font-size='100' 
+    font-size='70' 
     fill='#ff0000' 
-    text-anchor='middle'
-  >A</text>
-  <text 
-    x='62' 
-    y='82' 
-    font-family="'Georgia', 'Times New Roman', serif" 
-    font-weight='bold' 
-    font-size='85' 
-    font-style='italic'
-    fill='#ff0000' 
-    text-anchor='middle'
-    style="opacity: 0.95;"
-  >S</text>
+    text-anchor='middle' 
+    dominant-baseline='middle'
+  >AS</text>
 </svg>
