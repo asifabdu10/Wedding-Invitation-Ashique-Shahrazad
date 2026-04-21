@@ -1,0 +1,84 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--cream);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoWrapper {
+  position: relative;
+  font-family: var(--font-script);
+  font-size: 6rem;
+  line-height: 1;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.logoOutline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--crimson);
+  opacity: 0.2;
+}
+
+.logoFill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.1s linear;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.logoFillInner {
+  color: var(--crimson);
+  width: 100%;
+  height: auto;
+  white-space: nowrap;
+}
+
+.loadingText {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  opacity: 0.8;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.progressBar {
+  width: 180px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressInner {
+  height: 100%;
+  background: var(--crimson);
+  transition: width 0.1s linear;
+}

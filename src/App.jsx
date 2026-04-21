@@ -4,7 +4,10 @@ import InvitationCard from './components/InvitationCard'
 import DarkToggle from './components/DarkToggle'
 import BackgroundDecoration from './components/BackgroundDecoration'
 
+import LoadingScreen from './components/LoadingScreen'
+
 export default function App() {
+  const [loading, setLoading] = useState(true)
   const [dark, setDark] = useState(() =>
     typeof window !== 'undefined' && localStorage.getItem('wedding-dark') === '1'
   )
@@ -16,6 +19,7 @@ export default function App() {
 
   return (
     <>
+      {loading && <LoadingScreen onFinished={() => setLoading(false)} />}
       <PetalCanvas />
       <BackgroundDecoration />
       <DarkToggle dark={dark} onToggle={() => setDark(d => !d)} />
