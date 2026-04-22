@@ -153,8 +153,8 @@
 .dateRow {
   display: flex;
   align-items: stretch;
-  border: 1.5px solid #fbd38d;
-  background: #fffbf2; /* Solid light cream background from image */
+  border: 1.5px solid var(--date-row-border);
+  background: var(--date-row-bg); /* Solid light cream background from image */
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 22px;
@@ -175,7 +175,7 @@
 }
 
 .dateCell+.dateCell {
-  border-left: 1.5px solid #fbd38d;
+  border-left: 1.5px solid var(--date-row-border);
 }
 
 .cellTop {
