@@ -153,11 +153,12 @@
 .dateRow {
   display: flex;
   align-items: stretch;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border: 1.5px solid #fbd38d;
+  background: #fffbf2; /* Solid light cream background from image */
+  border-radius: 12px;
   overflow: hidden;
   margin-bottom: 22px;
-  transition: border-color 0.4s;
+  transition: all 0.4s ease;
 }
 
 .dateCell {
@@ -174,7 +175,7 @@
 }
 
 .dateCell+.dateCell {
-  border-left: 1px solid var(--border);
+  border-left: 1.5px solid #fbd38d;
 }
 
 .cellTop {
