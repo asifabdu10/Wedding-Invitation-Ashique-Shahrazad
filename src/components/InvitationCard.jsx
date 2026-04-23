@@ -63,9 +63,9 @@ export default function InvitationCard() {
         <InteractiveHeart />
         <h2 className={styles.name}>Shahrazad Wahab</h2>
         <div className={styles.relationGroup}>
-          <p className={styles.relation}>D/O </p>
-          <p className={styles.address}>Address</p>
-          <p className={styles.relation}>(G/D of )</p>
+          <p className={styles.relation}>D/O Abdul Wahab & Haseena Wahab </p>
+          <p className={styles.address}>Bismi Manzil, Vandanam P.O, Alappuzha </p>
+          <p className={styles.relation}>(G/D Late Ahmed Moulavy & Late Khadeeja and Late Osman & Nabeesa Beevi )</p>
         </div>
         <div className={styles.divider}>✦</div>
         <h2 className={styles.weddingTitle}>Wedding</h2>
@@ -134,7 +134,7 @@ export default function InvitationCard() {
         <p className={styles.footer}>
           With love ❤️,
           <br />
-          Ashique &amp; Shahrazad
+          Navaz &amp; Vaheeda
         </p>
       </div>
     </article>
