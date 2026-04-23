@@ -9,6 +9,11 @@ export default function LoadingScreen({ onFinished }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
+    // Check if the page is already loaded
+    let isPageLoaded = document.readyState === 'complete'
+    const handlePageLoad = () => { isPageLoaded = true }
+    window.addEventListener('load', handlePageLoad)
+
     const handleMouseMove = (e) => {
       const moveX = (e.clientX - window.innerWidth / 2) / 50
       const moveY = (e.clientY - window.innerHeight / 2) / 50
@@ -27,20 +32,30 @@ export default function LoadingScreen({ onFinished }) {
     window.addEventListener('touchmove', handleTouchMove)
     window.addEventListener('touchstart', handleTouchMove)
     
-    // Simulate loading progress
+    // Optimized loading progress
     const timer = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(timer)
-          setTimeout(onFinished, 800)
+          // Small buffer to ensure everything is rendered
+          setTimeout(onFinished, 400)
           return 100
         }
-        return prev + 1.5
+
+        // If we reach 90% but page isn't fully loaded, wait there
+        if (prev >= 90 && !isPageLoaded) {
+          return 90
+        }
+        
+        // Faster increments: 4% when low, 2% when high
+        const increment = prev < 70 ? 4.5 : 2.2
+        return Math.min(prev + increment, 100)
       })
-    }, 30)
+    }, 25) // Faster interval
 
     return () => {
       clearInterval(timer)
+      window.removeEventListener('load', handlePageLoad)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('touchmove', handleTouchMove)
       window.removeEventListener('touchstart', handleTouchMove)
