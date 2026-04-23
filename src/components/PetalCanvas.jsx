@@ -150,33 +150,6 @@ export default function PetalCanvas() {
       }
     }
 
-    /* Gyro tracking */
-    function onOrientation(e) {
-      if (e.beta !== null && e.gamma !== null) {
-        // Map tilt to a virtual cursor position
-        // This makes petals react as if the "cursor" is moving with the tilt
-        const x = (window.innerWidth / 2) + (e.gamma * (window.innerWidth / 60))
-        const y = (window.innerHeight / 2) + ((e.beta - 45) * (window.innerHeight / 60))
-        mouseRef.current = { x, y }
-      }
-    }
-
-    function requestPermission() {
-      if (typeof DeviceOrientationEvent !== 'undefined' && 
-          typeof DeviceOrientationEvent.requestPermission === 'function') {
-        DeviceOrientationEvent.requestPermission()
-          .then(response => {
-            if (response === 'granted') {
-              window.addEventListener('deviceorientation', onOrientation)
-            }
-          }).catch(err => console.log('Gyro permission denied:', err))
-      } else {
-        window.addEventListener('deviceorientation', onOrientation)
-      }
-      window.removeEventListener('click', requestPermission)
-      window.removeEventListener('touchstart', requestPermission)
-    }
-
     /* Reset when pointer leaves window */
     function onMouseLeave() {
       mouseRef.current = { x: -9999, y: -9999 }
@@ -202,8 +175,6 @@ export default function PetalCanvas() {
     window.addEventListener('mousemove',  onMouseMove, { passive: true })
     window.addEventListener('touchmove',  onTouchMove, { passive: true })
     window.addEventListener('touchstart', onTouchMove, { passive: true })
-    window.addEventListener('touchstart', requestPermission)
-    window.addEventListener('click',       requestPermission)
     window.addEventListener('mouseleave', onMouseLeave)
 
     return () => {
@@ -212,9 +183,6 @@ export default function PetalCanvas() {
       window.removeEventListener('mousemove',  onMouseMove)
       window.removeEventListener('touchmove',  onTouchMove)
       window.removeEventListener('touchstart', onTouchMove)
-      window.removeEventListener('deviceorientation', onOrientation)
-      window.removeEventListener('touchstart', requestPermission)
-      window.removeEventListener('click',       requestPermission)
       window.removeEventListener('mouseleave', onMouseLeave)
     }
   }, [])
