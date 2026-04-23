@@ -84,7 +84,7 @@ export default function InvitationCard() {
         </div>
 
         <p className={styles.venueName}>Contour Resorts and Convention Centre</p>
-        <p className={styles.venueLocation}><PinIcon /> Tiruvalla , Changanassery</p>
+        <p className={styles.venueLocation}><PinIcon /> Changanassery</p>
 
         <p className={`${styles.label} ${styles.countdownLabel}`}>Wedding Countdown</p>
         <Countdown />
