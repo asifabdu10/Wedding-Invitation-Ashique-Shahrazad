@@ -52,7 +52,7 @@ export default function InvitationCard() {
         <div className={styles.initials}>A &amp; S</div>
         <p className={styles.bismillah}>In the name of Allah, the Most Gracious, the Most Merciful</p>
         <br />
-        <p className={styles.parentsName}>Abdul Navas & Vaheeda I</p>
+        <p className={styles.parentsName}>Abdul Navaz & Vaheeda I</p>
         <p className={styles.address}>Parathara, Vandanam P.O, Alappuzha <br />Ph: 9496332144</p>
         <p className={styles.inviteText}>
           With immense joy and gratitude to Almighty, we cordially invite you and your family to the wedding ceremony of our beloved son
