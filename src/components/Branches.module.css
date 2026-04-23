@@ -1,0 +1,25 @@
+.branchWrapper {
+  position: absolute;
+  will-change: transform;
+  filter: blur(1.5px);
+  pointer-events: none;
+}
+
+.topLeft {
+  top: -100px;
+  left: -80px;
+  width: 60vw;
+  max-width: 600px;
+}
+
+.bottomRight {
+  bottom: -120px;
+  right: -100px;
+  width: 70vw;
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .topLeft { width: 80vw; top: -50px; left: -40px; }
+  .bottomRight { width: 90vw; bottom: -60px; right: -50px; }
+}
