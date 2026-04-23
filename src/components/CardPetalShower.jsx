@@ -55,14 +55,12 @@ export default function CardPetalShower() {
     let rafId
 
     // Use ResizeObserver to ensure canvas always matches parent size perfectly
-    const observer = new ResizeObserver((entries) => {
-      for (let entry of entries) {
-        const { width, height } = entry.contentRect
-        // Multiply by devicePixelRatio for sharpness, but simple for now
-        canvas.width = width
-        canvas.height = height
-      }
-    })
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
+
+    const observer = new ResizeObserver(resize)
 
     if (parent) observer.observe(parent)
 
@@ -70,12 +68,13 @@ export default function CardPetalShower() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       petalsRef.current = petalsRef.current.filter(p => p.life > 0)
       petalsRef.current.forEach(p => {
-        p.update()
         p.draw(ctx)
+        p.update()
       })
       rafId = requestAnimationFrame(loop)
     }
 
+    resize()
     loop()
 
     return () => {
