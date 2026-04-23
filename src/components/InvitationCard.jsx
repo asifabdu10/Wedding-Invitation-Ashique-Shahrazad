@@ -98,37 +98,7 @@ export default function InvitationCard() {
           </a>
         </div>
 
-        {/* ── Reception Section ── */}
 
-        <div className={styles.receptionSection}>
-          <div className={styles.divider}>✦</div>
-          <p className={styles.inviteText}>
-            We look forward to your presence at the
-          </p>
-          <h2 className={styles.receptionTitle}>Reception</h2>
-
-          <div className={`${styles.dateRow} ${styles.receptionTheme}`}>
-            <div className={styles.dateCell}>
-              <span className={styles.cellTop}>August, 2026</span>
-              <span className={`${styles.cellValue} ${styles.cellBig}`}>Sunday</span>
-            </div>
-            <div className={`${styles.dateCell} ${styles.narrowCell}`}>
-              <span className={`${styles.cellValue} ${styles.cellHighlight}`}>02</span>
-            </div>
-            <div className={styles.dateCell}>
-              <span className={`${styles.cellValue} ${styles.cellBig}`}>6 <span className={styles.cellSmall}>PM</span></span>
-            </div>
-          </div>
-
-          <p className={styles.venueName}>PVSIS Auditorium</p>
-          <p className={styles.venueLocation}><PinIcon /> Alappuzha</p>
-
-          <div className={styles.btnRow}>
-            <a className={`${styles.btn} ${styles.receptionBtn}`} href="https://www.google.com/maps/place/PVSIS+Auditorium/@9.4218741,76.349437,17.25z/data=!4m6!3m5!1s0x3b089bcd2cb6061b:0x4df493e7167a25a6!8m2!3d9.4226721!4d76.3470073!16s%2Fg%2F11fq8k45wz?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <PinIcon /> Get Directions
-            </a>
-          </div>
-        </div>
 
         <div className={styles.divider}>✦</div>
         <p className={styles.footer}>
