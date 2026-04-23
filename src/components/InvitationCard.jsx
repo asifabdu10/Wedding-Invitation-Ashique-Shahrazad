@@ -35,9 +35,9 @@ function InteractiveHeart() {
 
   return (
     <div className={styles.heartWrapper} onMouseEnter={spawnHeart} onClick={(e) => { e.preventDefault(); spawnHeart(); }}>
-      <span className={styles.heart} aria-hidden="true">❤️</span>
+      <span className={styles.heart} aria-hidden="true">💕</span>
       {hearts.map(h => (
-        <span key={h.id} className={styles.popHeart} style={{ '--x': `${h.x}px`, '--r': `${h.rotation}deg` }}>❤️</span>
+        <span key={h.id} className={styles.popHeart} style={{ '--x': `${h.x}px`, '--r': `${h.rotation}deg` }}>💕</span>
       ))}
     </div>
   )
@@ -59,13 +59,13 @@ export default function InvitationCard() {
         </p>
         <div className={styles.divider}>✦</div>
         <h1 className={styles.name}>Ashique Abdulla P A</h1>
-        <p className={styles.relation}>(G/S of Late Abdulla Kunju P A & Late P K Jameela Beevi and Ibrahim Kunju I & Subaidha Beegum)</p>
+        <p className={styles.relation}>(G/S of Late Abdulla Kunju P A & Late P K Jameela Beevi (Parathara, Vandanam) AND Ibrahim Kunju I & Subaidha Beegum (Vadavadichira, Kakkazham))</p>
         <InteractiveHeart />
         <h2 className={styles.name}>Shahrazad Wahab</h2>
         <div className={styles.relationGroup}>
           <p className={styles.relation}>D/O Abdul Wahab & Haseena Wahab </p>
           <p className={styles.address}>Bismi Manzil, Vandanam P.O, Alappuzha </p>
-          <p className={styles.relation}>(G/D Late Ahmed Moulavy & Late Khadeeja and Late Osman & Nabeesa Beevi )</p>
+          <p className={styles.relation}>(G/D Late Ahmed Moulavy & Late Khadeeja AND Late Osman & Nabeesa Beevi )</p>
         </div>
         <div className={styles.divider}>✦</div>
         <h2 className={styles.weddingTitle}>Wedding</h2>
