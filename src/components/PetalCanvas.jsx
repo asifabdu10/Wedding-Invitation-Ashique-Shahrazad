@@ -25,7 +25,7 @@ class Petal {
   _init(initial = false) {
     this.x       = Math.random() * this.cw
     this.y       = initial ? Math.random() * this.ch : -20
-    this.size    = 4 + Math.random() * 10 // Reduced range: 4px to 14px
+    this.size    = 5 + Math.random() * 20 // Reverted to 5px - 25px
     this.color   = COLORS[Math.floor(Math.random() * COLORS.length)]
     this.targetVX = -0.4 + Math.random() * 0.8   // gentle horizontal drift
     this.targetVY =  0.5 + Math.random() * 1.0   // fall speed
