@@ -29,8 +29,8 @@ export default function LoadingScreen({ onFinished }) {
     }
 
     window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('touchmove', handleTouchMove)
-    window.addEventListener('touchstart', handleTouchMove)
+    window.addEventListener('touchmove', handleTouchMove, { passive: true })
+    window.addEventListener('touchstart', handleTouchMove, { passive: true })
     
     // Optimized loading progress
     const timer = setInterval(() => {

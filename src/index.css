@@ -47,6 +47,8 @@ body.dark {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -54,7 +56,28 @@ body {
   background-color: var(--cream);
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
   transition: background-color 0.4s;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* ── Custom Scrollbar (Light Theme) ── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a0a8;
+  border-radius: 5px;
+  border: 3px solid var(--cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b5263e;
 }
 
 #root {
@@ -65,4 +88,5 @@ body {
   padding: 60px 20px;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
