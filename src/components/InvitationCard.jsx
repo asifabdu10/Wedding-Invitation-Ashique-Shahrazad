@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react'
 import Countdown from './Countdown'
-import RSVP from './RSVP'
 import CardPetalShower from './CardPetalShower'
 import styles from './InvitationCard.module.css'
 
@@ -52,13 +51,24 @@ export default function InvitationCard() {
       <div className={styles.pageContent}>
         <div className={styles.initials}>A &amp; S</div>
         <p className={styles.bismillah}>In the name of Allah, the Most Gracious, the Most Merciful</p>
-        <p className={styles.label}>Together with their families</p>
+        <br />
+        <p className={styles.parentsName}>Abdul Navas & Vaheeda I</p>
+        <p className={styles.address}>Parathara, Vandanam P.O, Alappuzha <br />Ph: 9496332144</p>
+        <p className={styles.inviteText}>
+          With immense joy and gratitude to Almighty, we cordially invite you and your family to the wedding ceremony of our beloved son
+        </p>
         <div className={styles.divider}>✦</div>
-        <h1 className={styles.name}>Ashique Abdulla</h1>
+        <h1 className={styles.name}>Ashique Abdulla P A</h1>
+        <p className={styles.relation}>(G/S of Late Abdulla Kunju P A & Late P K Jameela Beevi and Ibrahim Kunju I & Subaidha Beegum)</p>
         <InteractiveHeart />
         <h2 className={styles.name}>Shahrazad Wahab</h2>
+        <div className={styles.relationGroup}>
+          <p className={styles.relation}>D/O </p>
+          <p className={styles.address}>Address</p>
+          <p className={styles.relation}>(G/D of )</p>
+        </div>
         <div className={styles.divider}>✦</div>
-        <p className={`${styles.label} ${styles.honorText}`}>Request the honor of your presence</p>
+        <h2 className={styles.weddingTitle}>Wedding</h2>
 
         <div className={styles.dateRow}>
           <div className={styles.dateCell}>
@@ -66,7 +76,7 @@ export default function InvitationCard() {
             <span className={`${styles.cellValue} ${styles.cellBig}`}>Sunday</span>
           </div>
           <div className={`${styles.dateCell} ${styles.narrowCell}`}>
-            <span className={`${styles.cellValue} ${styles.cellHighlight}`}>2</span>
+            <span className={`${styles.cellValue} ${styles.cellHighlight}`}>02</span>
           </div>
           <div className={styles.dateCell}>
             <span className={`${styles.cellValue} ${styles.cellBig}`}>12 <span className={styles.cellSmall}>PM</span></span>
@@ -88,7 +98,38 @@ export default function InvitationCard() {
           </a>
         </div>
 
-        <RSVP />
+        {/* ── Reception Section ── */}
+
+        <div className={styles.receptionSection}>
+          <div className={styles.divider}>✦</div>
+          <p className={styles.inviteText}>
+            We look forward to your presence at the
+          </p>
+          <h2 className={styles.receptionTitle}>Reception</h2>
+
+          <div className={`${styles.dateRow} ${styles.receptionTheme}`}>
+            <div className={styles.dateCell}>
+              <span className={styles.cellTop}>August, 2026</span>
+              <span className={`${styles.cellValue} ${styles.cellBig}`}>Sunday</span>
+            </div>
+            <div className={`${styles.dateCell} ${styles.narrowCell}`}>
+              <span className={`${styles.cellValue} ${styles.cellHighlight}`}>02</span>
+            </div>
+            <div className={styles.dateCell}>
+              <span className={`${styles.cellValue} ${styles.cellBig}`}>6 <span className={styles.cellSmall}>PM</span></span>
+            </div>
+          </div>
+
+          <p className={styles.venueName}>PVSIS Auditorium</p>
+          <p className={styles.venueLocation}><PinIcon /> Alappuzha</p>
+
+          <div className={styles.btnRow}>
+            <a className={`${styles.btn} ${styles.receptionBtn}`} href="https://www.google.com/maps/place/PVSIS+Auditorium/@9.4218741,76.349437,17.25z/data=!4m6!3m5!1s0x3b089bcd2cb6061b:0x4df493e7167a25a6!8m2!3d9.4226721!4d76.3470073!16s%2Fg%2F11fq8k45wz?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+              <PinIcon /> Get Directions
+            </a>
+          </div>
+        </div>
+
         <div className={styles.divider}>✦</div>
         <p className={styles.footer}>
           With love ❤️,

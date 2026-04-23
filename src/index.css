@@ -24,7 +24,7 @@
   --rsvp-yes-border: #f0e68c;
   --rsvp-no-bg: #fff7f7;
   --rsvp-no-border: #fca5a5;
-  --date-row-bg: #fffbf2;
+  --date-row-bg: #ffffff;
   --date-row-border: #fbd38d;
 }
 
@@ -41,8 +41,8 @@ body.dark {
   --rsvp-yes-border: rgba(212, 175, 55, 0.3);
   --rsvp-no-bg: rgba(181, 38, 62, 0.1);
   --rsvp-no-border: rgba(181, 38, 62, 0.3);
-  --date-row-bg: rgba(0, 0, 0, 0.15);
-  --date-row-border: rgba(251, 211, 141, 0.2);
+  --date-row-bg: #1a1010;
+  --date-row-border: rgba(251, 211, 141, 0.4);
 }
 
 html {

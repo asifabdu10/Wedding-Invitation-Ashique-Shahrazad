@@ -30,7 +30,51 @@
   color: var(--text-dark);
   opacity: 0.75;
   letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
+.parentsName {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.address {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: 16px;
+}
+
+.inviteText {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  opacity: 0.9;
+}
+
+.relation {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.relationGroup {
+  margin-top: 8px;
+  min-height: 40px; /* Space for user to fill in */
 }
 
 /* ── Labels ── */
@@ -293,6 +337,71 @@
   text-decoration: underline;
 }
 
+.weddingTitle {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--crimson);
+  margin: 10px 0 15px;
+}
+
+/* ── Reception Section ── */
+.receptionSection {
+  margin-top: 20px;
+  padding-top: 0;
+  width: 100%;
+}
+
+.receptionTitle {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #A64B2A; /* Warm earthy orange from reference */
+  margin-bottom: 12px;
+}
+
+:global(body.dark) .receptionTitle {
+  color: #E67E22; /* Vibrant orange for dark mode */
+}
+
+.receptionTheme {
+  background: #ffffff; /* Matching the wedding row background */
+  border-color: #FF7F50; /* Coral/Orange border */
+}
+
+:global(body.dark) .receptionTheme {
+  background: #1a1010; /* Matching the deep dark wedding row background */
+  border-color: rgba(255, 127, 80, 0.4);
+}
+
+.receptionTheme .cellHighlight {
+  color: #E67E22; /* Carrot Orange */
+}
+
+:global(body.dark) .receptionTheme .cellHighlight {
+  color: #FF8C00;
+}
+
+.receptionTheme .dateCell+.dateCell {
+  border-left-color: #FF7F50;
+}
+
+:global(body.dark) .receptionTheme .dateCell+.dateCell {
+  border-left-color: rgba(255, 127, 80, 0.4);
+}
+
+.receptionBtn {
+  background: var(--card-bg);
+  color: var(--text-dark);
+  border-color: var(--border);
+}
+
+.receptionBtn:hover {
+  background: var(--cream);
+  border-color: #c9a0a8;
+  color: #D35400; /* Keep the orange accent on hover */
+}
+
 /* ── Responsive ── */
 @media (max-width: 500px) {
   .card {
@@ -305,6 +414,10 @@
 
   .initials {
     font-size: 2.5rem;
+  }
+
+  .receptionTitle {
+    font-size: 2.8rem;
   }
 
   .btnRow {
