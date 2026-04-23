@@ -11,8 +11,8 @@ const COLORS = [
   '#E8899A', // deeper rose
 ]
 
-const REPULSION_RADIUS = 120  // px — distance at which petals react
-const REPULSION_FORCE  = 7    // strength of push
+const REPULSION_RADIUS = 70   // px — distance at which petals react
+const REPULSION_FORCE  = 5    // strength of push
 const DAMPING          = 0.06 // how quickly petals return to normal path
 
 /* ── Petal Class ── */
@@ -25,7 +25,7 @@ class Petal {
   _init(initial = false) {
     this.x       = Math.random() * this.cw
     this.y       = initial ? Math.random() * this.ch : -20
-    this.size    = 4 + Math.random() * 11 // Subtle range: 4px to 15px
+    this.size    = 4 + Math.random() * 10 // Reduced range: 4px to 14px
     this.color   = COLORS[Math.floor(Math.random() * COLORS.length)]
     this.targetVX = -0.4 + Math.random() * 0.8   // gentle horizontal drift
     this.targetVY =  0.5 + Math.random() * 1.0   // fall speed
