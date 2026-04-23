@@ -11,8 +11,8 @@ const COLORS = [
   '#E8899A', // deeper rose
 ]
 
-const REPULSION_RADIUS = 70   // px — distance at which petals react
-const REPULSION_FORCE  = 5    // strength of push
+const REPULSION_RADIUS = 100  // px — distance at which petals react
+const REPULSION_FORCE  = 7    // strength of push
 const DAMPING          = 0.06 // how quickly petals return to normal path
 
 /* ── Petal Class ── */
