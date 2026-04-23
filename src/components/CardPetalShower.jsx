@@ -97,8 +97,10 @@ export default function CardPetalShower() {
       const x = e.clientX - rect.left
       const y = e.clientY - rect.top
       
-      petalsRef.current.push(new LocalPetal(x, y))
-      petalsRef.current.push(new LocalPetal(x, y))
+      const count = Math.floor(Math.random() * 6) + 2
+      for (let i = 0; i < count; i++) {
+        petalsRef.current.push(new LocalPetal(x, y))
+      }
       
       lastSpawnRef.current = now
     }
