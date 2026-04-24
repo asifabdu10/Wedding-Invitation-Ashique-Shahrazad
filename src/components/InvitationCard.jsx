@@ -104,7 +104,7 @@ export default function InvitationCard() {
         <p className={styles.footer}>
           With love ❤️,
           <br />
-          Navaz &amp; Vaheeda
+          Asif Abdulla  &amp; Adhil Abdulla
         </p>
       </div>
     </article>
